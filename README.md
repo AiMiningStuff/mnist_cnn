@@ -1,6 +1,5 @@
 ## SPECIAL THANKS TO
-- [Muratovm](https://github.com/Muratovm)
-- [cheesywow](https://github.com/cheesywow)
+[Muratovm](https://github.com/Muratovm) & [cheesywow](https://github.com/cheesywow)
 
 They gave me the inspiration and provided Painter.py.
 
