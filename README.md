@@ -1,7 +1,14 @@
 ## SETTING UP
-- Install spyder
-- Install a bunch of Keras stuff
-- Install h5py using:`sudo ipython -m pip install h5py`
+- Install Anaconda:
+  - https://www.anaconda.com/download/
+- Install Theano:
+  - http://deeplearning.net/software/theano/install.html#install
+- Install Keras:
+  - `sudo ipython -m pip install keras`
+- Test that Keras is installed:
+  - `ipython -c "import keras; print keras.__version__"`
+- Install h5py using:
+  - `sudo ipython -m pip install h5py`
 
 ## USING IT
 - Train the CNN:
