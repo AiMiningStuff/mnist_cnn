@@ -52,18 +52,45 @@ print(Y_train.shape)
 # Declear sequential model
 model = Sequential()
 
-# add a convolutional input layer
-# The step size is (1,1) by default, and it can be tuned using the 'subsample' 
-# parameter
+'''
+TODO: Add the initial input layer
+
+Add a convolutional input layer, with 32 filters, kernel size of 3x3,
+activation using relu, input shape of 1x28x28, and data format set to
+channels_first'. 
+
+The step size is (1,1) by default, and it can be tuned using the 'subsample' 
+parameter.
+'''
 model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(1,28,28), \
                  data_format="channels_first"))
 
-# add more layers
+'''
+TODO: Add more layers
+
+- Add another 2d convolution layer, with 32 filters, 3x3 size and activation
+layer relu.
+
+- Add a 2d max pooling layer with pool size 2x2.
+
+- Add a dropout layer, a layer that prevents over fitting.
+'''
 model.add(Conv2D(32, (3, 3), activation='relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Dropout(0.25))
 
 # add a fully connected layer and then the output layer
+'''
+TODO: Add some more layers for good measure.
+
+- Add one layer to flatten all the data.
+
+- Add a densly connected layer with 128 neurons and a relu activation.
+
+- Add a dropout layer, to prevent over fitting.
+
+- Add another densely connected layer with 10 neurons and a softmax.
+'''
 model.add(Flatten())
 model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
@@ -81,6 +108,9 @@ model.fit(X_train, Y_train,
 # evaluate the model on test data
 score = model.evaluate(X_test, Y_test, verbose=0)
 
+'''
+This saves the model to file.
+'''
 # serialize model to JSON
 model_json = model.to_json()
 with open("model_struct.json", "w") as json_file:
