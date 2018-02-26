@@ -1,3 +1,9 @@
+## SPECIAL THANKS TO
+- [Muratovm](https://github.com/Muratovm)
+- [cheesywow](https://github.com/cheesywow)
+
+They gave me the inspiration and provided Painter.py.
+
 ## SETTING UP
 - Install Anaconda:
   - https://www.anaconda.com/download/
@@ -16,3 +22,4 @@
 
 ## RESOURCES USED
 - https://elitedatascience.com/keras-tutorial-deep-learning-in-python
+- https://github.com/PortfolioCollection/Character_Recogniser
