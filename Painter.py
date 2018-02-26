@@ -5,11 +5,6 @@ Adapted by: luid101
 '''
 
 #-------CNN IMPORST-----#
-from keras.models import Sequential  # this is a linear stack of nn layers
-from keras.layers import Dense, Dropout, Flatten  # basic nn layers
-from keras.layers import Conv2D, MaxPooling2D  # cnn specific layers
-from keras.utils import np_utils  # utilities for transforming data
-from keras.datasets import mnist  # the mnist dataset
 from keras.models import model_from_json
 
 #----USEFULL CLASSES---#
@@ -36,7 +31,6 @@ from tkinter import *
 from PIL import Image
 from PIL import ImageDraw
 import numpy as np
-import math
 
 
 array = np.full((280,280),255)

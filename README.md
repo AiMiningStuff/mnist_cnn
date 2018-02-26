@@ -1,8 +1,6 @@
 ## SETTING UP
 - Install Anaconda:
   - https://www.anaconda.com/download/
-- Install Theano:
-  - http://deeplearning.net/software/theano/install.html#install
 - Install Keras:
   - `sudo ipython -m pip install keras`
 - Test that Keras is installed:

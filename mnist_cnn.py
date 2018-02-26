@@ -12,9 +12,8 @@ from keras.models import model_from_json
 
 np.random.seed(123)  # for reproducibility
 
+# Load data
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-
-from matplotlib import pyplot as plt
 
 # strighten data
 X_train[X_train > 0] = 255
@@ -29,6 +28,8 @@ print(X_train_ex.shape)
 
 X_train_ex = X_train_ex.reshape(28,28)
 
+# plot example of data
+from matplotlib import pyplot as plt
 plt.imshow(X_train_ex, cmap='gray')
 
 # reshape data so that we specify depth
