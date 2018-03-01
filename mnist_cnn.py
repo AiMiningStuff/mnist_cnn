@@ -91,19 +91,27 @@ TODO: Add some more layers for good measure.
 # put code here
 
 # compile the model
+'''
 model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
+'''
 
 # fit model on data
+'''
 model.fit(X_train, Y_train, 
           batch_size=32, epochs=10, verbose=1)
+'''
 
 # evaluate the model on test data
+'''
 score = model.evaluate(X_test, Y_test, verbose=0)
+'''
 
 '''
 This saves the model to file.
+'''
+
 '''
 # serialize model to JSON
 model_json = model.to_json()
@@ -112,3 +120,4 @@ with open("model_struct.json", "w") as json_file:
 # serialize weights to HDF5
 model.save_weights("model_weights.h5")
 print("Saved model to disk")
+'''
