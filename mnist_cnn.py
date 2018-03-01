@@ -62,8 +62,7 @@ channels_first'.
 The step size is (1,1) by default, and it can be tuned using the 'subsample' 
 parameter.
 '''
-model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(1,28,28), \
-                 data_format="channels_first"))
+# put code here
 
 '''
 TODO: Add more layers
@@ -75,12 +74,10 @@ layer relu.
 
 - Add a dropout layer, a layer that prevents over fitting.
 '''
-model.add(Conv2D(32, (3, 3), activation='relu'))
-model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Dropout(0.25))
+# put code here
 
-# add a fully connected layer and then the output layer
 '''
+Add a fully connected layer and then the output layer
 TODO: Add some more layers for good measure.
 
 - Add one layer to flatten all the data.
@@ -91,10 +88,7 @@ TODO: Add some more layers for good measure.
 
 - Add another densely connected layer with 10 neurons and a softmax.
 '''
-model.add(Flatten())
-model.add(Dense(128, activation='relu'))
-model.add(Dropout(0.5))
-model.add(Dense(10, activation='softmax'))
+# put code here
 
 # compile the model
 model.compile(loss='categorical_crossentropy',
