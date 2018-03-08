@@ -40,7 +40,7 @@ class Paint():
     def __init__(self):
         
         # set brush size
-        self.brush_size = 30
+        self.brush_size = 1
 
         # Load Model from disk
         # load json and create model
@@ -94,14 +94,14 @@ class Paint():
         img.save("output.tif")
         #prediction = Averaged_Tester.test_one(darken(img))
         
-        #dark_img = darken(img)
+        dark_img = darken(img)
         #img_lst = list(dark_img.getdata())
-        np_img_lst = np.array(img.getdata())
+        np_img_lst = np.array(dark_img.getdata())
         
         np_img_lst = (255 - np_img_lst)
         np_img_lst = np_img_lst.reshape(784)
         
-        np_img_lst[np_img_lst > 0] = 255
+        np_img_lst[np_img_lst > 0] *= 5
         
 
         np_img_lst = np_img_lst.reshape(28, 28)
@@ -125,8 +125,24 @@ class Paint():
         print(prediction.shape)
         max_index = np.argmax(prediction)
 
-        self.result_label['text'] = 'Prediction: ' + str(max_index) + "\n\n" \
-            + str(prediction)
+        element = np.partition(prediction.flatten(), -2)[-2]
+        
+        p1 = prediction.reshape(10,)
+        second_max_element_index = np.where(p1 == element)[0][0]
+        
+        self.result_label['text'] = '  I think its ' + str(max_index) + \
+                    ' but it could also be ' + str(second_max_element_index) +\
+        "\n\n I am this sure about the rest:\n"
+        #    + str(prediction)
+
+        #if p1[max_index] < 0.05:
+        #    self.result_label['text'] = 'I am not sure :/'
+        
+        p2 = prediction.reshape(10,)
+        print(len(p2))
+        
+        for i in range(len(p2)):
+            self.result_label['text'] += str(i) + ") " + str(p2[i]*100) + "%\n"
                                   
     def paint(self, event):
         if self.old_x and self.old_y:
