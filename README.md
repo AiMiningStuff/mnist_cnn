@@ -1,4 +1,5 @@
 This program recognises numbers drawn on a canvas.
+
 It uses the MNIST dataset and is one of the projects that was taught in the University of Toronto Mississauga's Machine Learning Workshop in the Hack Lab. 
 
 ## SPECIAL THANKS TO
